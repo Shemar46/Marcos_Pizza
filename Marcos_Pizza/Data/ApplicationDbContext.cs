@@ -9,5 +9,8 @@ namespace Marcos_Pizza.Data
             : base(options)
         {
         }
+
+        public DbSet<User> User { get; set; }   
+        public DbSet<Orders> Orders { get; set; }   
     }
 }
