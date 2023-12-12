@@ -8,8 +8,8 @@ namespace Marcos_Pizza.Configuration
     {
         public MapperConfig() 
         {
-            CreateMap<Order, OrderVM>().ReverseMap();
-            CreateMap<ProductC, ProductVM>().ReverseMap();
+            CreateMap<Orders, OrderVM>().ReverseMap();
+            CreateMap<Products, ProductVM>().ReverseMap();
             CreateMap<UserVM, UserVM>().ReverseMap();
         }
     }

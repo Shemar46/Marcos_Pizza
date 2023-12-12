@@ -1,4 +1,6 @@
-﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+﻿
+using Marcos_Pizza.Web.Configuration.Entities;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 
 namespace Marcos_Pizza.Data
@@ -10,7 +12,19 @@ namespace Marcos_Pizza.Data
         {
         }
 
+        protected override void OnModelCreating(ModelBuilder builder)
+        {
+            base.OnModelCreating(builder);
+            builder.ApplyConfiguration(new RoleSeedConfiguration());
+            
+            base.OnModelCreating(builder);
+            builder.ApplyConfiguration(new UserSeedConfiguration());
+            
+            base.OnModelCreating(builder);
+            builder.ApplyConfiguration(new UserRoleConfiguration());    
+        }
         public DbSet<User> User { get; set; }   
         public DbSet<Orders> Orders { get; set; }   
+        public DbSet<Products> Products { get; set; }   
     }
 }

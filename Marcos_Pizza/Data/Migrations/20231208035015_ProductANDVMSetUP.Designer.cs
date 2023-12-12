@@ -4,6 +4,7 @@ using Marcos_Pizza.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,10 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Marcos_Pizza.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20231208035015_ProductANDVMSetUP")]
+    partial class ProductANDVMSetUP
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -33,21 +35,18 @@ namespace Marcos_Pizza.Data.Migrations
                     b.Property<float>("Cost")
                         .HasColumnType("real");
 
-                    b.Property<DateTime?>("Datetime_Created")
-                        .HasColumnType("datetime2");
+                    b.Property<string>("Datetime_Created")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("Order_Id")
+                        .HasColumnType("int");
 
                     b.Property<string>("Payment_Method")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("Product_Description")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Product_Name")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
                     b.Property<string>("User_Id")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
@@ -158,59 +157,6 @@ namespace Marcos_Pizza.Data.Migrations
                         .HasFilter("[NormalizedUserName] IS NOT NULL");
 
                     b.ToTable("AspNetUsers", (string)null);
-
-                    b.HasData(
-                        new
-                        {
-                            Id = "e9b43ab8-ab3d-4a8f-949c-a4d14312d1ca",
-                            AccessFailedCount = 0,
-                            ConcurrencyStamp = "1d6bc4ab-0932-4613-8b66-71b4e3fc7b58",
-                            Email = "admin1@yahoo.com",
-                            EmailConfirmed = true,
-                            FirstName = "user",
-                            LastName = "Admin",
-                            LockoutEnabled = false,
-                            NormalizedEmail = "ADMIN1@YAHOO.COM",
-                            PasswordHash = "AQAAAAEAACcQAAAAEGXHHj7f7VtoKKieWLFZM0Xr47r+M9EopQfVGpJ+3vRr2889dLJCgEYcRtEfnbenAA==",
-                            PhoneNumberConfirmed = false,
-                            SecurityStamp = "984e2e9d-8ec4-418c-b691-eeff01cde55a",
-                            TwoFactorEnabled = false,
-                            UserName = "admin1@yahoo.com"
-                        },
-                        new
-                        {
-                            Id = "be70bfbe-3812-5a37-b42d-66d9ed5baf7e",
-                            AccessFailedCount = 0,
-                            ConcurrencyStamp = "6f659841-2095-43c3-88d0-ba9b2456f93b",
-                            Email = "mar@user.com",
-                            EmailConfirmed = true,
-                            FirstName = "Mar",
-                            LastName = "user",
-                            LockoutEnabled = false,
-                            NormalizedEmail = "MAR@USER.COM",
-                            PasswordHash = "AQAAAAEAACcQAAAAEAXM4Ed8kYrEKTbeGHpSRjSgBjvdOGvR25D1lEjgyvpfCQK5Qp71Y1xGfgMyDRyeWg==",
-                            PhoneNumberConfirmed = false,
-                            SecurityStamp = "0e47f188-c030-4cc6-a647-d3d98df96e71",
-                            TwoFactorEnabled = false,
-                            UserName = "mar@user.com"
-                        },
-                        new
-                        {
-                            Id = "e9b43ab8-ad6b-4a8e-949c-a4d14312c1ca",
-                            AccessFailedCount = 0,
-                            ConcurrencyStamp = "a5f3a4e8-d94b-4144-8b64-32879ee13a95",
-                            Email = "admin123@yahoo.com",
-                            EmailConfirmed = true,
-                            FirstName = "user123",
-                            LastName = "Admin123",
-                            LockoutEnabled = false,
-                            NormalizedEmail = "ADMIN123@YAHOO.COM",
-                            PasswordHash = "AQAAAAEAACcQAAAAEOvbRXLnadPhDo1lKdP44vGir0w1gZElC77OMZTN3Kj7LxzKhPVChJUzw7qg5ZG3lw==",
-                            PhoneNumberConfirmed = false,
-                            SecurityStamp = "deee7faf-397b-4832-aadd-e3f8078e37ee",
-                            TwoFactorEnabled = false,
-                            UserName = "admin123@yahoo.com"
-                        });
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRole", b =>
@@ -238,22 +184,6 @@ namespace Marcos_Pizza.Data.Migrations
                         .HasFilter("[NormalizedName] IS NOT NULL");
 
                     b.ToTable("AspNetRoles", (string)null);
-
-                    b.HasData(
-                        new
-                        {
-                            Id = "e8b43kb8-ad6b-4a8e-949c-a5d14312c1ca",
-                            ConcurrencyStamp = "01270698-dadc-4b3b-ad18-a598038b903c",
-                            Name = "Administrator",
-                            NormalizedName = "ADMINISTRATOR"
-                        },
-                        new
-                        {
-                            Id = "be70bfb6-3812-4b96-b42d-66d7ed5baf5f",
-                            ConcurrencyStamp = "28900970-b76a-4ab6-b1e4-426f77e0e8dc",
-                            Name = "User",
-                            NormalizedName = "USER"
-                        });
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
@@ -343,18 +273,6 @@ namespace Marcos_Pizza.Data.Migrations
                     b.HasIndex("RoleId");
 
                     b.ToTable("AspNetUserRoles", (string)null);
-
-                    b.HasData(
-                        new
-                        {
-                            UserId = "e9b43bb8-ad2c-4a8e-949c-a4d14313c1cf",
-                            RoleId = "e8b43kb8-ad6b-4a8e-949c-a5d14312c1ca"
-                        },
-                        new
-                        {
-                            UserId = "e9b43ab8-ad6b-4a8e-949c-a4d14312c1ca",
-                            RoleId = "be70bfb6-3812-4b96-b42d-66d7ed5baf5f"
-                        });
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserToken<string>", b =>
