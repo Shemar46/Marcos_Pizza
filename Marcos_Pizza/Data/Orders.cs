@@ -30,7 +30,8 @@ namespace Marcos_Pizza.Data
        // public string Time_Created { get; set;}
         public DateTime? Datetime_Created { get; set;}
         [Display(Name = "Cost")]
-        [Required] public float Cost { get; set;}
+        [Required] 
+        public float Cost { get; set;}
         [Display(Name = "Name")]
         [Required]
         public string Product_Name { get; set; }

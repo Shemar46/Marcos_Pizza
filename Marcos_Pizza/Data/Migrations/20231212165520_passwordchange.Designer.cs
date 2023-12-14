@@ -4,6 +4,7 @@ using Marcos_Pizza.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,10 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Marcos_Pizza.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20231212165520_passwordchange")]
+    partial class passwordchange
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -63,7 +65,7 @@ namespace Marcos_Pizza.Data.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
-                    b.Property<int?>("Product_Code")
+                    b.Property<int>("Product_Code")
                         .HasColumnType("int");
 
                     b.Property<float>("Product_Cost")
@@ -74,6 +76,7 @@ namespace Marcos_Pizza.Data.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Product_IMG")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Product_Name")
@@ -163,17 +166,16 @@ namespace Marcos_Pizza.Data.Migrations
                         {
                             Id = "e9b43ab8-ad6b-4a8e-949c-a4d14312c1ca",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "b04b9df0-c89a-45a9-ad5a-2cdada5d036f",
+                            ConcurrencyStamp = "1ef2e0dd-5ed4-4536-ac4b-1b159b5ceae1",
                             Email = "admin1@yah.com",
                             EmailConfirmed = true,
                             FirstName = "user",
                             LastName = "Admin",
                             LockoutEnabled = false,
                             NormalizedEmail = "ADMIN1@YAH.COM",
-                            NormalizedUserName = "ADMIN1@YAH.COM",
-                            PasswordHash = "AQAAAAEAACcQAAAAEBWLjKXv6m8r5vd8p7qXBuvE6WEBqZ4W5NIph2UaJlNpIKYF8dYfxjXpCM1jaDnWrw==",
+                            PasswordHash = "AQAAAAEAACcQAAAAEKFtdzjkMU0ZPjQMrLmsxDbLVcajXVTT8pJQrsbtGooPRxEFBRRfGYRmxquUmNJHXQ==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "991107f4-d03a-4ca5-a021-16511898cde0",
+                            SecurityStamp = "b79b85e4-0cad-40eb-bbf8-12d545bafee6",
                             TwoFactorEnabled = false,
                             UserName = "admin1@yah.com"
                         },
@@ -181,53 +183,33 @@ namespace Marcos_Pizza.Data.Migrations
                         {
                             Id = "43cb8c89-9172-46b6-aa72-f2e7bc12cf49",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "338ef885-1f84-4985-859f-33ff3c06f69d",
+                            ConcurrencyStamp = "794485e3-3d42-47e3-8649-8680c264e200",
                             Email = "admin1@yahoo.com",
                             EmailConfirmed = true,
                             FirstName = "user",
                             LastName = "Admin",
                             LockoutEnabled = false,
                             NormalizedEmail = "ADMIN1@YAHOO.COM",
-                            NormalizedUserName = "ADMIN1@YAHOO.COM",
-                            PasswordHash = "AQAAAAEAACcQAAAAEHSB7ZJaJkffTCNSqGWD3AxM21RYdMqMbWBN36u/PSMbifRQaOsrdsk2z1HGokKvmw==",
+                            PasswordHash = "AQAAAAEAACcQAAAAECTgUyVc8K0nTgou1tM9qP+LSxFywHjIFxi1uSfvhBylUoMqMxfEmlc33Rzl+svlVg==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "31c32f52-ffb1-4028-95cf-8d0a8e98c0fd",
+                            SecurityStamp = "789a40c8-bc4a-43e1-b6d5-01df6e2cae40",
                             TwoFactorEnabled = false,
                             UserName = "admin1@yahoo.com"
                         },
                         new
                         {
-                            Id = "63cb8c98-1927-46b6-aa72-d2e7bc12cf49",
-                            AccessFailedCount = 0,
-                            ConcurrencyStamp = "d23e0aac-0d8b-4893-841c-de8438561565",
-                            Email = "admin1@hoo.com",
-                            EmailConfirmed = true,
-                            FirstName = "user",
-                            LastName = "Admin",
-                            LockoutEnabled = false,
-                            NormalizedEmail = "ADMIN1@HOO.COM",
-                            NormalizedUserName = "ADMIN1@HOO.COM",
-                            PasswordHash = "AQAAAAEAACcQAAAAEEPX6urUiGrbk1NDtmrfne+BRgWQpzYcQYDAF0nwraGX42QSBoiCrB+Bzd7zqXlkFA==",
-                            PhoneNumberConfirmed = false,
-                            SecurityStamp = "f754fe48-bf2f-44f5-b58e-c56cab4d23f8",
-                            TwoFactorEnabled = false,
-                            UserName = "admin1@hoo.com"
-                        },
-                        new
-                        {
                             Id = "d6a02c66-abf0-4fab-a98e-468080ee51df",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "ec291f06-bef1-4af5-b066-e00ea9bf0ee2",
+                            ConcurrencyStamp = "9763da5d-a109-45a2-a322-3cf97baeae50",
                             Email = "mar@user.com",
                             EmailConfirmed = true,
                             FirstName = "Mar",
                             LastName = "user",
                             LockoutEnabled = false,
                             NormalizedEmail = "MAR@USER.COM",
-                            NormalizedUserName = "MAR@USER.COM",
-                            PasswordHash = "AQAAAAEAACcQAAAAEGQO7xgch70pQDZp9oRkJ3yht0RDIN5SRN1Ap01TlJqICbbshx4t+VmjyTbll67UDw==",
+                            PasswordHash = "AQAAAAEAACcQAAAAEFFXTTLK/kWo8mcF+DxGcuk9VFypBQnqiBend5VQC04eTQsbCnsH3ly1fOuVuAUOlA==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "465e2159-846d-4412-a8ad-1673e2592297",
+                            SecurityStamp = "26bd962c-037d-4d8d-bea7-07a732e42d2d",
                             TwoFactorEnabled = false,
                             UserName = "mar@user.com"
                         });
@@ -263,21 +245,21 @@ namespace Marcos_Pizza.Data.Migrations
                         new
                         {
                             Id = "43cb8c89-9172-46b6-aa72-e2e7dc12cf49",
-                            ConcurrencyStamp = "be52e27b-81b0-4b68-b675-d180fa4ce8be",
+                            ConcurrencyStamp = "497db1ac-681f-4654-b6c3-7dee40bd9896",
                             Name = "Administrator",
                             NormalizedName = "ADMINISTRATOR"
                         },
                         new
                         {
                             Id = "c6a02c66-bbf0-4fab-a98e-468181ee51de",
-                            ConcurrencyStamp = "d12fc3df-946c-4a7b-93e4-de7e9f0ac7e4",
+                            ConcurrencyStamp = "65624676-d068-4234-a7f7-65f2e8142c77",
                             Name = "System",
                             NormalizedName = "SYSTEM"
                         },
                         new
                         {
                             Id = "b6a02c66-acf0-4fab-a98e-467080ee51df",
-                            ConcurrencyStamp = "fdfe132c-8346-4e65-b064-adc21fb3b9a4",
+                            ConcurrencyStamp = "f92a197b-47cd-40f5-bf07-bcf906c02063",
                             Name = "User",
                             NormalizedName = "USER"
                         });
@@ -380,11 +362,6 @@ namespace Marcos_Pizza.Data.Migrations
                         new
                         {
                             UserId = "e9b43ab8-ad6b-4a8e-949c-a4d14312c1ca",
-                            RoleId = "c6a02c66-bbf0-4fab-a98e-468181ee51de"
-                        },
-                        new
-                        {
-                            UserId = "63cb8c98-1927-46b6-aa72-d2e7bc12cf49",
                             RoleId = "c6a02c66-bbf0-4fab-a98e-468181ee51de"
                         },
                         new

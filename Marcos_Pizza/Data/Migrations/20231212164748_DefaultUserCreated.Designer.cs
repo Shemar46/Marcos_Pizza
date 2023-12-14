@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Marcos_Pizza.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20231212042723_TestingUserSeeding")]
-    partial class TestingUserSeeding
+    [Migration("20231212164748_DefaultUserCreated")]
+    partial class DefaultUserCreated
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -164,54 +164,54 @@ namespace Marcos_Pizza.Data.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "e9b43ab8-ab3d-4a8f-949c-a4d14312d1ca",
+                            Id = "e9b43ab8-ad6b-4a8e-949c-a4d14312c1ca",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "b20ae8bf-f920-4691-a70d-1e24faab28cd",
+                            ConcurrencyStamp = "2bcd2836-ebe6-465e-8819-d79cfdafcb5b",
+                            Email = "admin1@yah.com",
+                            EmailConfirmed = true,
+                            FirstName = "user",
+                            LastName = "Admin",
+                            LockoutEnabled = false,
+                            NormalizedEmail = "ADMIN1@YAH.COM",
+                            PasswordHash = "AQAAAAEAACcQAAAAENTq3qwi/2zDQWGg++52E1/8rksx6qA7pgMmnYraSqaRc8RLK5AJUbpUw6RmNb4D6A==",
+                            PhoneNumberConfirmed = false,
+                            SecurityStamp = "7849108a-08a8-4a1f-b120-633a40d3175e",
+                            TwoFactorEnabled = false,
+                            UserName = "admin1@yah.com"
+                        },
+                        new
+                        {
+                            Id = "43cb8c89-9172-46b6-aa72-f2e7bc12cf49",
+                            AccessFailedCount = 0,
+                            ConcurrencyStamp = "5089323d-dac7-445e-97e4-ca7615e9bb16",
                             Email = "admin1@yahoo.com",
                             EmailConfirmed = true,
                             FirstName = "user",
                             LastName = "Admin",
                             LockoutEnabled = false,
                             NormalizedEmail = "ADMIN1@YAHOO.COM",
-                            PasswordHash = "AQAAAAEAACcQAAAAEBjllyEFYbFYFUUkpMZaDKhKdmlzczmiFPRibtsCqmrKgXj8qEsNLYpZKgpXXGgTaw==",
+                            PasswordHash = "AQAAAAEAACcQAAAAEA5hv+vuL+3DOtWC5qvylFic5MvD7D2ch9xM1TBQn3+KcVMjotlhb9qr8cv9w/Gj+A==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "679829b7-8ca5-4a42-ba50-6208619d60af",
+                            SecurityStamp = "d8888e44-ff2e-4b09-b3f0-c569714db84d",
                             TwoFactorEnabled = false,
                             UserName = "admin1@yahoo.com"
                         },
                         new
                         {
-                            Id = "be70bfbe-3812-5a37-b42d-66d9ed5baf7e",
+                            Id = "d6a02c66-abf0-4fab-a98e-468080ee51df",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "712ab66d-0115-461b-9037-c521e99ff92d",
+                            ConcurrencyStamp = "95af6093-584a-4fa4-8e3a-e48fe73018df",
                             Email = "mar@user.com",
                             EmailConfirmed = true,
                             FirstName = "Mar",
                             LastName = "user",
                             LockoutEnabled = false,
                             NormalizedEmail = "MAR@USER.COM",
-                            PasswordHash = "AQAAAAEAACcQAAAAEKeSJB0ixORkAMWpFX3TLdPpcJOGtSOB8hloFgfYZjS4XamlBDDPDYKsDupX/0cdhw==",
+                            PasswordHash = "AQAAAAEAACcQAAAAEPVOUZR2SqLrmBUUifO0HwboVdvrywzyEB8mnmdBQ1f8aYMRzGKo8flWkJ2TCmZTwQ==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "a32111fa-b1d4-4c88-bda8-583d641c451d",
+                            SecurityStamp = "f4b48de9-1ec7-48a9-92d7-53cb106b1cd6",
                             TwoFactorEnabled = false,
                             UserName = "mar@user.com"
-                        },
-                        new
-                        {
-                            Id = "e9b43ab8-ad6b-4a8e-949c-a4d14312c1ca",
-                            AccessFailedCount = 0,
-                            ConcurrencyStamp = "1e8877b9-6052-4477-ac14-09332e5eb82d",
-                            Email = "admin123@yahoo.com",
-                            EmailConfirmed = true,
-                            FirstName = "user123",
-                            LastName = "Admin123",
-                            LockoutEnabled = false,
-                            NormalizedEmail = "ADMIN123@YAHOO.COM",
-                            PasswordHash = "AQAAAAEAACcQAAAAEGBM2z/08v2tMmgYIGwWG9MePeq7O2T5QmJaqJPOOquCpRWL2DlaNpRjv3GTV4aI6w==",
-                            PhoneNumberConfirmed = false,
-                            SecurityStamp = "fb644f8a-41f0-4e3c-873d-f63897131039",
-                            TwoFactorEnabled = false,
-                            UserName = "admin123@yahoo.com"
                         });
                 });
 
@@ -244,15 +244,22 @@ namespace Marcos_Pizza.Data.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "e9b43ab6-ab3d-4a7a-949c-a4d14312d1cc",
-                            ConcurrencyStamp = "c44bdfff-7710-4dbc-b98b-34b6f0255dd1",
+                            Id = "43cb8c89-9172-46b6-aa72-e2e7dc12cf49",
+                            ConcurrencyStamp = "ecbe950b-85e2-4cde-805d-c5ea254a0c1c",
                             Name = "Administrator",
                             NormalizedName = "ADMINISTRATOR"
                         },
                         new
                         {
-                            Id = "be70bfbe-3812-4a37-b42d-66d9ed5baf5f",
-                            ConcurrencyStamp = "dde7a6f3-a7a3-4a71-8fa0-e4aa66c7c15e",
+                            Id = "c6a02c66-bbf0-4fab-a98e-468181ee51de",
+                            ConcurrencyStamp = "63ae1bbb-5cf5-4e17-a29f-e4cd9333f543",
+                            Name = "System",
+                            NormalizedName = "SYSTEM"
+                        },
+                        new
+                        {
+                            Id = "b6a02c66-acf0-4fab-a98e-467080ee51df",
+                            ConcurrencyStamp = "071a9355-5adb-4a30-9848-f44d2a63d9f1",
                             Name = "User",
                             NormalizedName = "USER"
                         });
@@ -349,13 +356,18 @@ namespace Marcos_Pizza.Data.Migrations
                     b.HasData(
                         new
                         {
-                            UserId = "e9b43ab8-ab3d-4a8f-949c-a4d14312d1ca",
-                            RoleId = "e9b43ab6-ab3d-4a7a-949c-a4d14312d1cc"
+                            UserId = "43cb8c89-9172-46b6-aa72-f2e7bc12cf49",
+                            RoleId = "43cb8c89-9172-46b6-aa72-e2e7dc12cf49"
                         },
                         new
                         {
-                            UserId = "be70bfbe-3812-5a37-b42d-66d9ed5baf7e",
-                            RoleId = "be70bfbe-3812-4a37-b42d-66d9ed5baf5f"
+                            UserId = "e9b43ab8-ad6b-4a8e-949c-a4d14312c1ca",
+                            RoleId = "c6a02c66-bbf0-4fab-a98e-468181ee51de"
+                        },
+                        new
+                        {
+                            UserId = "d6a02c66-abf0-4fab-a98e-468080ee51df",
+                            RoleId = "b6a02c66-acf0-4fab-a98e-467080ee51df"
                         });
                 });
 

@@ -8,9 +8,11 @@ using Microsoft.EntityFrameworkCore;
 using Marcos_Pizza.Data;
 using AutoMapper;
 using Marcos_Pizza.Models;
+using Microsoft.AspNetCore.Authorization;
 
 namespace Marcos_Pizza.Controllers
 {
+    //[Authorize]
     public class ProductsController : Controller
     {
         private readonly ApplicationDbContext _context;
@@ -27,17 +29,12 @@ namespace Marcos_Pizza.Controllers
         {
             var Products = _mapper.Map<List<ProductVM>>(await _context.Products.ToListAsync());
 
-
               return View(Products);
-                
-                
-                //_context.Products != null ? 
-                //          View(await _context.Products.ToListAsync()) :
-                //          Problem("Entity set 'ApplicationDbContext.Products'  is null.");
         }
 
         public async Task<IActionResult> PassProduct(int ID)
         {
+
             var Products = _context.Products.FirstOrDefault(m => m.Id == ID);
 
             ProductVM productVM = new ProductVM(Products);
@@ -85,7 +82,7 @@ namespace Marcos_Pizza.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,Product_Name,Product_Description,Product_Cost,Product_Code,Product_IMG")] Products products)
+        public async Task<IActionResult> Create( Products products)
         {
             if (ModelState.IsValid)
             {

@@ -12,44 +12,62 @@ namespace Marcos_Pizza.Web.Configuration.Entities
         {
             var hasher =new PasswordHasher<User>();
             builder.HasData(
+
+                 new User
+                 {
+                     Id = "e9b43ab8-ad6b-4a8e-949c-a4d14312c1ca",
+                     Email = "admin1@yah.com",
+                     NormalizedEmail = "ADMIN1@YAH.COM",
+                     NormalizedUserName = "ADMIN1@YAH.COM",
+                     UserName = "admin1@yah.com",
+                     FirstName = "user",
+                     LastName = "Admin",
+                     PasswordHash = hasher.HashPassword(null, "Password1"),
+                     EmailConfirmed = true
+                 },
                   new User
                   {
-                      Id ="e9b43ab8-ab3d-4a8f-949c-a4d14312d1ca",
+                      Id = "43cb8c89-9172-46b6-aa72-f2e7bc12cf49",
                       Email ="admin1@yahoo.com",
                       NormalizedEmail ="ADMIN1@YAHOO.COM",
+                      NormalizedUserName ="ADMIN1@YAHOO.COM",
                       UserName ="admin1@yahoo.com",
                       FirstName = "user",
                       LastName = "Admin",
-                      PasswordHash = hasher.HashPassword(null,"Password1"),
+                      PasswordHash = hasher.HashPassword(null,"P@ssword1"),
                       EmailConfirmed= true
                   },
 
 
-                  new User
-                  {
-                      Id = "be70bfbe-3812-5a37-b42d-66d9ed5baf7e",
-                      Email = "mar@user.com",
-                      NormalizedEmail = "MAR@USER.COM",
-                      UserName = "mar@user.com",
-                      FirstName = "Mar",
-                      LastName = "user",
-                      PasswordHash = hasher.HashPassword(null,"Password12"),
-                      EmailConfirmed = true
-
-                  },
-
                    new User
                    {
-                       Id ="e9b43ab8-ad6b-4a8e-949c-a4d14312c1ca",
-                       Email ="admin123@yahoo.com",
-                       NormalizedEmail ="ADMIN123@YAHOO.COM",
-                       UserName ="admin123@yahoo.com",
-                       FirstName ="user123",
-                       LastName = "Admin123",
-                       PasswordHash = hasher.HashPassword(null, "Admin123"),
+                       Id = "63cb8c98-1927-46b6-aa72-d2e7bc12cf49",
+                       Email = "admin1@hoo.com",
+                       NormalizedEmail = "ADMIN1@HOO.COM",
+                       NormalizedUserName = "ADMIN1@HOO.COM",
+                       UserName = "admin1@hoo.com",
+                       FirstName = "user",
+                       LastName = "Admin",
+                       PasswordHash = hasher.HashPassword(null, "P@ssword1"),
                        EmailConfirmed = true
-                   }
+                   },
 
+                  new User
+                  {
+                      Id = "d6a02c66-abf0-4fab-a98e-468080ee51df",
+                      Email = "mar@user.com",
+                      NormalizedEmail = "MAR@USER.COM",
+                      NormalizedUserName = "MAR@USER.COM",
+                      UserName = "mar@user.com",
+
+                      FirstName = "Mar",
+                      LastName = "user",
+                      PasswordHash = hasher.HashPassword(null,"P@ssword1"),
+                      EmailConfirmed = true
+
+                  }
+
+                  
 
 
                   //be70bfbe-3812-4a37-b42d-66d9ed5baf5f
