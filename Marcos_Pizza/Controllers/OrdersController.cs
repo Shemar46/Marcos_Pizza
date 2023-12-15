@@ -60,9 +60,14 @@ namespace Marcos_Pizza.Controllers
         {
             
            var Products = _context.Products.FirstOrDefault(m=> m.Id == ID);
-            // OrderVM orderVM = new OrderVM( );
-            var orderVM = new OrderVM { Cost = Products.Product_Cost, Product_Name = Products.Product_Name, Product_Description = Products.Product_Description };
-            
+
+            string id = HttpContext.User.GetUserId();
+            HttpContext.User.FindFirst(id);
+
+            id = HttpContext.User.GetUserId();
+            var User = _context.User.FirstOrDefault(f => f.Id == id);
+            var orderVM = new OrderVM { Cost = Products.Product_Cost, Product_Name = Products.Product_Name, Product_Description = Products.Product_Description, Cashier_Name=User.FirstName };
+           
             return View(orderVM);
         }
 
@@ -74,12 +79,14 @@ namespace Marcos_Pizza.Controllers
         public async Task<IActionResult> Create(OrderVM orderVM, DateTime dateTime)
         {
 
-            
+          
+
+
             //orders.Product_Description = orderVM.Product_Description;
             //orders.Product_Name = orderVM.Product_Name;
             //orders.Datetime_Created =DateTime.Now;
             //orders.Cost = orderVM.Cost;
-            
+
 
             if (ModelState.IsValid)
             {
@@ -99,13 +106,7 @@ namespace Marcos_Pizza.Controllers
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
 
-
-
             }
-
-          
-
-
             return View(orderVM);
         }
 
