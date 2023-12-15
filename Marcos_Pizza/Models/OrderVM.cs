@@ -37,13 +37,5 @@ namespace Marcos_Pizza.Models
         [Display(Name = "Description")]
         [Required]
         public string Product_Description { get; set; }
-
-        [Display(Name = "Customer Name")]
-        [Required]
-        public string Customer_Name { get; set; }
-
-        [Display(Name = "Cashier Name")]
-        [Required]
-        public string Cashier_Name { get; set; }
     }
 }
