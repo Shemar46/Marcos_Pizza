@@ -9,52 +9,31 @@
 <p>
     <a asp-action="Create">Create New</a>
 </p>
-<table class="table">
-    <thead>
-        <tr>
-           @*  <th>
-                @Html.DisplayNameFor(model => model.Order_Id)
-            </th> *@
-            <th>
-                @Html.DisplayNameFor(model => model.User_Id)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Payment_Method)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Datetime_Created)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Cost)
-            </th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-               @*  @Html.DisplayFor(modelItem => item.Order_Id) *@
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.User_Id)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Payment_Method)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Datetime_Created)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Cost)
-            </td>
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
-            </td>
-        </tr>
-}
-    </tbody>
-</table>
+
+
+<main> 
+    @foreach (var item in Model) 
+    {
+                <div class="container ">
+                    <div class="col-6">
+                        <div class="card shadow-sm">
+                            <div class="text-center">
+                            <div class="card-body font= 1em ">
+                                <h3>@item.Product_Name</h3>
+                                <p class="card-text">@item.Product_Description</p>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <div class="btn-group">
+                                        <a asp-controller="Orders" asp-action="Create" asp-route-id="@item.Id" type="button" class="btn btn-sm btn-outline-secondary btn-dark text-center text-white ">Order</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+              </div>
+  }           <br />
+</main>        
+            
+               
+           
 

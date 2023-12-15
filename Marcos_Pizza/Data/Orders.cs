@@ -26,6 +26,7 @@ namespace Marcos_Pizza.Data
       //  public int Order_Id{ get; set;}
         [ForeignKey ("User") ]
         public string? User_Id { get; set;}
+        [Display(Name = "Payment Method")]
         public  String? Payment_Method {get; set;} 
        // public string Time_Created { get; set;}
         public DateTime? Datetime_Created { get; set;}

@@ -16,12 +16,20 @@ namespace Marcos_Pizza.Web.Configuration.Entities
                   NormalizedName = "ADMINISTRATOR"
               },
 
+
                  new IdentityRole
                  {
                      Id = "c6a02c66-bbf0-4fab-a98e-468181ee51de",
                      Name = "System",
                      NormalizedName = "SYSTEM"
                  },
+
+              new IdentityRole
+              {
+                  Id = "f4e166e1-363f-4f5e-a91d-b4b957c27cdc",
+                  Name = "SuperAdmin",
+                  NormalizedName = "SUPERADMIN"
+              },
 
 
 

@@ -15,25 +15,25 @@
     
     @foreach (var item in Model)
     {
-       <div class="container">
+       <div class="container ">
         <div class="col-6">
             <div class="card shadow-sm">
                 <div class="text-center">
 @*                         <img width="100" height="150" src="https://www.queensleeappetit.com/wp-content/uploads/2019/02/Meat-Lovers-Pizza-3.jpg" class="rounded" alt="...">
  *@                </div>
-                <div class="card-body">
+                <div class="card-body font= 1em ">
                     <h3>@item.Product_Name</h3>
-                    <p class="card-text">@item.Product_Name</p>
+                    <p class="card-text">@item.Product_Description</p>
                     <div class="d-flex justify-content-between align-items-center">
                         <div class="btn-group">
-                                <a  asp-controller="Orders" asp-action="Create" asp-route-id="@item.Id" type="button"  class="btn btn-sm btn-outline-secondary">< >Order</a>
-                                <a  asp-controller="Products" asp-action="Delete" asp-route-id="@item.Id" type="button" class="button" style="vertical-align:middle" class="btn btn-sm btn-outline-secondary">< >Order</a>
+                                <a  asp-controller="Orders" asp-action="Create" asp-route-id="@item.Id" type="button"  class="btn btn-sm btn-outline-secondary btn-dark text-center text-white ">Order</a>
                      </div>
                     </div>
                 </div>
             </div>
         </div>
         </div>
+        <br />
     }
 
 

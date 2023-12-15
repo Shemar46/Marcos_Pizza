@@ -11,7 +11,8 @@ namespace Marcos_Pizza.Data
         [Display(Name = "Description Of Product")]
         public string Product_Description { get; set;}
         [Display(Name = "Cost")]
-        public float Product_Cost { get; set;} 
+        public float Product_Cost { get; set;}
+        [Display(Name = "Code")]
         public int? Product_Code { get; set;} 
         public string? Product_IMG { get; set;}  
     }

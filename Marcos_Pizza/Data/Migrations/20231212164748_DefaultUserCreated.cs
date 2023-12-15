@@ -6,6 +6,7 @@ namespace Marcos_Pizza.Data.Migrations
 {
     public partial class DefaultUserCreated : Migration
     {
+
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.InsertData(

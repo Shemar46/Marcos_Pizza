@@ -25,7 +25,7 @@ namespace Marcos_Pizza.Controllers
         // GET: Orders
         public async Task<IActionResult> Index()
         {
-            string id = HttpContext.User.GetUserId();
+          //  string id = HttpContext.User.GetUserId();
             var Orders = _mapper.Map<List<OrderVM>>(await _context.Orders.ToListAsync());
             return View(Orders);
 
@@ -74,7 +74,7 @@ namespace Marcos_Pizza.Controllers
         public async Task<IActionResult> Create(OrderVM orderVM, DateTime dateTime)
         {
 
-            g
+            
             //orders.Product_Description = orderVM.Product_Description;
             //orders.Product_Name = orderVM.Product_Name;
             //orders.Datetime_Created =DateTime.Now;

@@ -23,40 +23,41 @@
                 <input asp-for="Product_Name" readonly class="form-control" />
                 <span asp-validation-for="Product_Name" class="text-danger"></span>
             </div>
-            <br />
-            <div class="form-group">
-                <label asp-for="Product_Name" class="control-label"></label>
-                <input asp-for="Payment_Method" hidden readonly class="form-control" />
-                <span asp-validation-for="Payment_Method" class="text-danger"></span>
-            </div>
-            <br />
+           @*  <br />
             <div class="form-group">
                 <label asp-for="Datetime_Created" class="control-label"></label>
                 <input asp-for="Datetime_Created"hidden readonly class="form-control" />
                 <span asp-validation-for="Datetime_Created" class="text-danger"></span>
-            </div>
+            </div> *@
+    
             <br />
+            <div class="form-group">
+                <label asp-for="Product_Description" class="control-label"></label>
+                <textarea asp-for="Product_Description" readonly class="form-control"></textarea>
+                <span asp-validation-for="Product_Description" class="text-danger"></span>
+             </div>
+
             <br />
             <div class="form-group">
                 <label asp-for="Cost" class="control-label"></label>
                 <input asp-for="Cost" readonly class="form-control" />
                 <span asp-validation-for="Cost" class="text-danger"></span>
             </div>
-            <br />
-            <br />
-            <div class="form-group">
-                <label asp-for="Product_Description" class="control-label"></label>
-                <textarea asp-for="Product_Name" readonly class="form-control"></textarea>
-                <span asp-validation-for="Product_Description" class="text-danger"></span>
 
+             <br />
             <div class="form-group">
-                <input  type="submit" value="Create" class="btn btn-green" />
+                <label asp-for="Payment_Method" class="control-label"></label>
+                <input asp-for="Payment_Method" class="form-control" />
+                <span asp-validation-for="Payment_Method" class="text-danger"></span>
+            </div>
+
+            <br />
+            <div class="col" class="form-group ">
+                <input type="submit" value="Create" class="btn btn-primary " />
+                <a asp-action="Index" class="btn btn-dark btn-group small" >Back to List</a>
             </div> 
         </form>
     </div>
 </div>
 
-<div>
-    <a asp-action="Index">Back to List</a>
-</div>
 

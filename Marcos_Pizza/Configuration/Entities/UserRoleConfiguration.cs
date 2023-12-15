@@ -27,11 +27,11 @@ namespace Marcos_Pizza.Web.Configuration.Entities
                       UserId = "63cb8c98-1927-46b6-aa72-d2e7bc12cf49"
                   },
 
-                 new IdentityUserRole<string>
-                 {
-                     RoleId = "b6a02c66-acf0-4fab-a98e-467080ee51df",
-                     UserId = "d6a02c66-abf0-4fab-a98e-468080ee51df"
-                 }
+                new IdentityUserRole<string>
+                {
+                    RoleId = "f4e166e1-363f-4f5e-a91d-b4b957c27cdc",
+                    UserId = "f4e155e1-363f-4f5e-a91d-a4a957c27cdc"
+                }
 
                 );
 
