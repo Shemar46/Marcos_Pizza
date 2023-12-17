@@ -41,8 +41,12 @@ namespace Marcos_Pizza.Data
         public string Product_Description { get; set;}
 
         [Display(Name = "Customer Name")]
-        [Required]
-        public string Customer_Name { get; set; }
+       
+        public string? Customer_Name { get; set; }
+
+        [Display(Name = "Cashier Name")]
+        
+        public string? Cashier { get; set; }
 
 
 

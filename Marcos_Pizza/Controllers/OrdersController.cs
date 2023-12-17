@@ -76,31 +76,26 @@ namespace Marcos_Pizza.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create(OrderVM orderVM, DateTime dateTime)
+        public async Task<IActionResult> Create(OrderVM orderVM)
         {
 
-          
 
-
-            //orders.Product_Description = orderVM.Product_Description;
-            //orders.Product_Name = orderVM.Product_Name;
-            //orders.Datetime_Created =DateTime.Now;
-            //orders.Cost = orderVM.Cost;
-
+            
 
             if (ModelState.IsValid)
             {
                 var orders = new Orders
 
                 {
-                    // orders.Product_Description = orderVM.Product_Description;
-                    Product_Description = orderVM.Product_Name,
+
+                    Product_Name = orderVM.Product_Name,
+                    Product_Description = orderVM.Product_Description,
                     Datetime_Created = DateTime.Now,
-                    Cost = orderVM.Cost
+                    Cost = orderVM.Cost,
+                    Customer_Name = orderVM.Customer_Name,
+                    Cashier = orderVM.Customer_Name 
 
                 };
-
-
 
                 _context.Add(orders);
                 await _context.SaveChangesAsync();
