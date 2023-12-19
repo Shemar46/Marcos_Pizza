@@ -15,12 +15,15 @@ namespace Marcos_Pizza.Controllers
     {
         private readonly ApplicationDbContext _context;
         private readonly IMapper _mapper;
+        private IMapper mapper;
 
         public OrdersController(ApplicationDbContext context, IMapper mapper)
         {
             _context = context;
             _mapper = mapper;
         }
+
+      
 
         // GET: Orders
         public async Task<IActionResult> Index()
